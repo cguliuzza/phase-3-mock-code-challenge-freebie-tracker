@@ -8,6 +8,6 @@ class Company < ActiveRecord::Base
     end
 
     def self.oldest_company
-        self.find_by(founding founding_year)
+        self.all.sort_by(&:founding_year).first
     end
 end
